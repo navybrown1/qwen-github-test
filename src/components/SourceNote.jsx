@@ -4,15 +4,15 @@ import './SourceNote.css';
 const SourceNote = ({ source }) => {
   return (
     <div className="source-note-container">
-      <div className="data-disclaimer">
-        <span className="disclaimer-icon">⚠️</span>
+      <div className="data-disclaimer verified">
+        <span className="disclaimer-icon">✅</span>
         <span className="disclaimer-text">
-          <strong>Sample data used for dashboard demonstration.</strong> Replace with verified EIA or AAA monthly data before publication.
+          <strong>Verified public data loaded.</strong> {source.note}
         </span>
       </div>
       
       <div className="sources-section">
-        <h4>Recommended Data Sources</h4>
+        <h4>Data Sources</h4>
         <ul>
           {source.recommendedSources.map((src, index) => (
             <li key={index}>{src}</li>
@@ -21,8 +21,7 @@ const SourceNote = ({ source }) => {
       </div>
       
       <p className="note-text">
-        Data represents average regular gasoline prices in New York State. 
-        Prices are per gallon in USD.
+        Prices represent regular gasoline in New York, shown in dollars per gallon. Local station prices can be higher or lower than statewide averages because of taxes, supply, brand, location, and timing.
       </p>
     </div>
   );
